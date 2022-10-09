@@ -1,5 +1,5 @@
 package clinicSys;
 
-public class Admin {
+public class Doctor {
 
 }
