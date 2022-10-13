@@ -21,11 +21,17 @@ public class Users {
 	public boolean checkPassword(String password) {
 		return this.password.equals(password);		
 	}
+	
 
 	public boolean signIn(String userName, String password) {
 		this.isSignedIn = checkUserName(userName) && checkPassword(password);
 		return this.isSignedIn;
 	}
+	
+	public boolean checkRole(String role) {
+		return this.role.equals(role);		
+	}
+	
 
 	public boolean signOut() {
 		this.isSignedIn = false;
