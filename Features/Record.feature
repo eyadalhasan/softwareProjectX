@@ -1,22 +1,9 @@
-Feature: Add Appointment to a Clinic appointment system
-	Description:add an appointment to the clinic appointment system
-	Actors: Patient
+Feature: add record for Patients
+	Description: add a record to the clinic appointment system
+	Actors: Secretary 
+	
 
-Scenario: Add an appointment successfully
- 	Given that the patient is logged in
- 	And there is an appointment is not reserved
- 	When the appointment is booked
- 	Then the appointment will be exist at the clinic appointment system
- 	
-Scenario: Add an appointment unsuccessfully
- 	Given that the patient is logged in
- 	And the appointment was reserved
- 	When the patient try to reserve this appointment
- 	Then the error message "This appointment was reserved by another patient" will appear
- 	
-Scenario: Add an appointment unsuccessfully
- 	Given that the patient is logged in
- 	And all appointments for this week was reserved
- 	When the patient try to reserve this appointment
- 	Then the error message "All appointments for this week were booked" will appear
- 	
+Scenario: recording an appointment or a visit made by a patient
+	When secretary is logged in
+	And a patient made an appointment or visit
+	Then The Secretary will record the appointment or the visit

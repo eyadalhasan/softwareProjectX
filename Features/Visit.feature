@@ -1,21 +1,21 @@
 Feature: Show Visit for Patients
-	Description: add a visit to the clinic appointment system
-	Actors: Patient and Secretary and Doctor and Admin
+	Description: show a visit to the clinic appointment system
+	Actors: Secretary 
+	
+	
+Scenario: the patinet visit the clinic on his appointment
+Given The secretary is logged in
+When a patient arrived to clinc on his appointment
+Then a visit will be recorded
 
-Scenario: The user is secretary and he/she is logged in
-	When secretary check a visit list
-	Then the patients visit list and their appointments will be appear
-	
-Scenario: The user is doctor and he/she is logged in
-	When doctor check a visit list
-	Then the patients visit list who reserved for this doctor and their appointments will be appear
-	
-Scenario: The user is admin and he/she is logged in
-	When admin check a visit list
-	Then the patients visit list and their appointments will be appear
-	
-Scenario: The user is patient and he/she is logged in
-	When patient check his visit list
-	Then this patient visit list and his/her appointments will be appear
-	
-	
+Scenario: the patinet visit the clinic without appointment
+Given The secretary is logged in
+When a patient arrived to clinic without appointment
+And the doctor is available
+Then a visit will be recorded
+
+Scenario: the patinet visit the clinic without appointment
+Given The secretary is logged in
+When a patient arrived to clinic without appointment
+And the doctor is not available
+Then an appointment will be recorded
