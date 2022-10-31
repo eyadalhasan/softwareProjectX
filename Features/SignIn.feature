@@ -1,6 +1,6 @@
 Feature: Users Sign in 
-	Description: The Admin signs into Clinic Management System
-	Actor: Admin
+	Description: The Users signs into Clinic Management System
+	Actor: All Users
 	
 Background: 
 	Given the user on the login page 
