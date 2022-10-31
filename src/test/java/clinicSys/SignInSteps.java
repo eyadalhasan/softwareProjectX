@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
-import io.cucumber.core.cli.Main;
 
 public class SignInSteps {
 
@@ -13,7 +12,7 @@ public class SignInSteps {
 	String password;
 	String role;
 	ArrayList<Users> usersList = new ArrayList<Users>();
-	Users user;;
+
 
 	@Given("the user on the login page")
 	public void theUserOnTheLoginPage() {
@@ -24,7 +23,7 @@ public class SignInSteps {
 	public void theUserEnterOneOfTheFollowingUserNameAndPasswordRegardlessHisRole(
 			io.cucumber.datatable.DataTable dataTable) {
 		List<List<String>> rows = dataTable.asLists(String.class);
-		user = null;
+
 		for (int i = 0; i < rows.size(); i++) {
 			Users addUser = new Users(rows.get(i).get(0), rows.get(i).get(1), rows.get(i).get(2));
 			usersList.add(addUser);
@@ -34,11 +33,8 @@ public class SignInSteps {
 	@Given("That the {string} is not signed in")
 	public void thatTheIsNotSignedIn(String role) {
 
-		for (int i = 0; i < usersList.size(); i++) {
-			usersList.get(i).isSignedIn = false;
-
-		}
-
+		for (int i = 0; i < usersList.size(); i++)
+			assertEquals(usersList.get(0).isSignedIn(), false);
 	}
 
 	@Given("the {string} username is {string}")
@@ -51,74 +47,41 @@ public class SignInSteps {
 	@Given("the {string} password is {string}")
 	public void thePasswordIs(String role, String password) {
 		this.password = password;
-		for (int i = 0; i < usersList.size(); i++) {
-
-			if (usersList.get(i).checkUserName(this.userName) && usersList.get(i).checkRole(role)
-					&& usersList.get(i).checkPassword(this.password) && !usersList.get(i).isSignedIn()) {
-				this.password = password;
-				this.role = role;
-				user = usersList.get(i);
-
-			}
-
-		}
 
 	}
 
 	@Then("the {string} sign in succeeds")
 	public void theSignInSucceeds(String role) {
 
-	assertEquals(user.signIn(userName, password), true);
-
-
+		for (int i = 0; i < usersList.size(); i++)
+			if (usersList.get(i).checkRole(role))
+				assertEquals(usersList.get(i).signIn(userName, password), true);
 
 	}
 
 	@Then("the {string} is signed in")
 	public void theIsSignedIn(String string) {
-		if (user != null) {
-
-		assertEquals(user.isSignedIn, true);
-		}
-
+		for (int i = 0; i < usersList.size(); i++)
+			if (usersList.get(i).checkRole(role))
+				assertEquals(usersList.get(i).isSignedIn(), true);
 	}
 
-	@Then("go to {string} Page")
+	@Then("go to {string} page")
 	public void goToPage(String string) {
 
 	}
 
-
-	//////////////////////////////////////////////////////////////////////////////////
-
-	@Given("the {string} password is not {string}")
-	public void thePasswordIsNot(String role, String password) {
-		this.password = password;
-		for (int i = 0; i < usersList.size(); i++) {
-			if (usersList.get(i).checkUserName(this.userName) && usersList.get(i).checkRole(role)
-				&& !usersList.get(i).checkPassword(this.password) && !usersList.get(i).isSignedIn()) {
-				this.role = role;
-				user = usersList.get(i);
-
-			}
-
-		}
-
+	@Then("the {string} sign in not succeeds")
+	public void theSignInNotSucceeds(String string) {
+		for (int i = 0; i < usersList.size(); i++)
+			if (usersList.get(i).checkRole(role))
+				assertEquals(usersList.get(i).signIn(userName, password), false);
 	}
-
-	@Then("the {string} sign in not  succeeds")
-	public void theSignInNotSucceeds(String role) {
-		assertEquals(user.signIn(userName, password), false);
+	@Then("the {string} is not signed in")
+	public void theIsNotSignedIn(String string) {
+		for (int i = 0; i < usersList.size(); i++)
+			if (usersList.get(i).checkRole(role))
+				assertEquals(usersList.get(i).isSignedIn(), false);
 	}
-
-	@Then("the {string} is not  signed in")
-	public void theIsNotSignedIn(String role) {
-		if (user != null) {
-	
-			assertEquals(user.isSignedIn, false);
-		}
-	}
-
-	
 
 }

@@ -1,7 +1,7 @@
 package clinicSys;
 
 public class Users {
-
+	
 	protected String userName;
 	protected String password;
 	protected String role;
@@ -41,5 +41,13 @@ public class Users {
 	public boolean isSignedIn() {
 		return this.isSignedIn;
 	}
+	
+	@Override
+    public boolean equals(Object o) {
+        if  (!(o instanceof Users))
+            return false;
+        Users other = (Users) o;
+        return (this.userName.equals(other.userName) && this.password.equals(other.password) && this.role.equals(other.role));
+    }
 
 }
