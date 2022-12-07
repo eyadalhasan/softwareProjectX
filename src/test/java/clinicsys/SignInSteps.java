@@ -6,8 +6,6 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
-import clinicsys.Users;
-
 public class SignInSteps {
 
 	String userName;
