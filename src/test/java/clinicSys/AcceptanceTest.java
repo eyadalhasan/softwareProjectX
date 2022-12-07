@@ -1,4 +1,4 @@
-package clinicsys;
+package clinicSys;
 
 import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @CucumberOptions(features = "Features",
 monochrome = true,
 snippets = SnippetType.CAMELCASE,
-glue = { "clinicsys" })
+glue = { "clinicSys" })
 
 public class AcceptanceTest {
 
