@@ -1,16 +1,17 @@
 package clinicSys;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
 public class Invoice {
-    protected ArrayList<Service> services = new ArrayList<>();
+    protected List<Service> services = new ArrayList<>();
     protected Double doctorVisit = 0.0;
     protected Double total = 0.0;
 
-    public Invoice(ArrayList<Service> selectedServices, Double doctorVisit) {
+    public Invoice(List<Service> selectedServices, Double doctorVisit) {
         services = selectedServices;
         for (Service service : selectedServices) {
             this.total += service.getPrice();
