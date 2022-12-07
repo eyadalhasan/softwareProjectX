@@ -1,4 +1,4 @@
-package clinicsys;
+package clinicSys;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
-import clinicsys.Users;
+import clinicSys.Users;
 
 
 public class SignOutSteps {
