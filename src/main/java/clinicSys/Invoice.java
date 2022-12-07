@@ -25,10 +25,10 @@ public class Invoice {
     	    Invoice.class.getName());
     	if (total == 0.0)
     		return false;
-    	String _service;
+    	String strservice;
         for (Service service : services) {
-        	_service=service.toString();
-            logger.log(Level.INFO,_service);
+        	strservice=service.toString();
+            logger.log(Level.INFO,strservice);
         }
       String  doctor="Doctor visit = " + doctorVisit;
       String totalV="Total Invoice = " + total + " NIS";
