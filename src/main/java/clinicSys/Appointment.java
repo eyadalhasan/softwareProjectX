@@ -37,6 +37,10 @@ public class Appointment {
         Appointment other = (Appointment) o;
         return (this.day.equals(other.day) && this.month.equals(other.month) && this.year.equals(other.year) && this.time.equals(other.time));
     }
+    @Override
+  public int hashCode() {
+   return 0;
+    }
 
     
 
