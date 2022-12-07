@@ -1,6 +1,9 @@
 package clinicSys;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 public class Invoice {
     protected ArrayList<Service> services = new ArrayList<Service>();
@@ -17,16 +20,22 @@ public class Invoice {
     }
 
     public boolean printInvoice() {
+    	Logger logger
+    	=Logger.getLogger(
+    	    Invoice.class.getName());
     	if (total == 0.0)
     		return false;
     	
         for (Service service : services) {
-            System.out.println(service.toString());
+            logger.log(Level.INFO,service.toString());
         }
-        System.out.println();
-        System.out.println("Doctor visit = " + doctorVisit);
-        System.out.println();
-        System.out.println("Total Invoice = " + total + " NIS");
+        
+
+        logger.log(Level.INFO,"\n");
+        logger.log(Level.INFO,"Doctor visit = " + doctorVisit);
+        logger.log(Level.INFO,"\n");
+        logger.log(Level.INFO,"Total Invoice = " + total + " NIS");
+       
         
         return true;
 
