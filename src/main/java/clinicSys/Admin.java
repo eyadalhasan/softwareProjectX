@@ -1,4 +1,4 @@
-package clinicsys;
+package clinicSys;
 
 public class Admin extends Users {
 

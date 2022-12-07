@@ -1,11 +1,11 @@
-package clinicsys;
+package clinicSys;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
 
-import clinicsys.Appointment;
-import clinicsys.Patient;
-import clinicsys.Record;
+import clinicSys.Appointment;
+import clinicSys.Patient;
+import clinicSys.Record;
 
 public class EditAppointmentSteps {
 

@@ -1,4 +1,4 @@
-package clinicsys;
+package clinicSys;
 
 import java.util.ArrayList;
 import java.util.logging.Level;

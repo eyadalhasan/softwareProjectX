@@ -1,4 +1,4 @@
-package clinicsys;
+package clinicSys;
 
 public class Appointment {
     private String day;
