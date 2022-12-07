@@ -7,6 +7,13 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 
+import clinicsys.Appointment;
+import clinicsys.Patient;
+import clinicsys.Record;
+import clinicsys.Report;
+import clinicsys.Secretary;
+import clinicsys.Service;
+
 
 public class ReportSteps {
 	

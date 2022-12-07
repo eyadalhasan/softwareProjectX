@@ -5,6 +5,9 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 
+import clinicsys.Patient;
+import clinicsys.Service;
+
 public class ServicesSteps {
 
 	Patient patient;
