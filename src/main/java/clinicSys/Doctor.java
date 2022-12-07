@@ -21,5 +21,9 @@ public class Doctor extends Users {
         Doctor other = (Doctor) o;
         return (this.userName.equals(other.userName) && this.password.equals(other.password) && this.role.equals(other.role));
     }
+    @Override
+  public int hashCode() {
+   return 0;
+    }
 
 }
