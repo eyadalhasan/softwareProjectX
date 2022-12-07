@@ -1,6 +1,5 @@
 package clinicSys;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,11 +18,21 @@ public class Report {
     }
 
     public boolean availableServicesReport(List<Service> availableServices) {
+    	
         if (availableServices.isEmpty())
             return false;
-
+        Logger logger
+    	=Logger.getLogger(
+    	   Invoice.class.getName());
+        
+      String ser;
+       
+        
         for (Service service : availableServices) {
-            System.out.println(service.printList());
+        	ser= service.printList();
+        	 logger.log(Level.INFO,ser);
+        	
+
         }
         return true;
     }

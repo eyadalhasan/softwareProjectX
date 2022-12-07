@@ -2,6 +2,8 @@ package clinicSys;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import clinicSys.Appointment;
 import clinicSys.Patient;
@@ -47,12 +49,12 @@ public class AddAppointmentSteps {
 
 	@Then("this appointment will book for this patient")
 	public void this_appointment_will_book_for_this_patient() {
-	    assertEquals(record.addAppointment(new Appointment(day, month, year, time), patient), true);
+	    assertTrue(record.addAppointment(new Appointment(day, month, year, time), patient));
 	}
 
 	@Then("the error message {string} will appear")
 	public void the_error_message_will_appear(String string) {
-		assertEquals(record.addAppointment(new Appointment(day, month, year, time), patient), false);
+		assertFalse(record.addAppointment(new Appointment(day, month, year, time), patient));
 
 	}
 
