@@ -1,16 +1,17 @@
 package clinicSys;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Patient extends Users {
-    private ArrayList<Service> selectedServices = new ArrayList<Service>();
+    private List<Service> selectedServices = new ArrayList<>();
     
 
     public Patient(String userName, String password, String role) {
         super(userName, password, role);        
     }
 
-    public ArrayList<Service> getSelectedServices() {
+    public List<Service> getSelectedServices() {
         return selectedServices;
     }
 
