@@ -31,7 +31,7 @@ public class Invoice {
         }
         
 
-        logger.log(Level.INFO,"\n");
+        logger.log(Level.SEVERE,"\n {0}");
         logger.log(Level.INFO,"Doctor visit = " + doctorVisit);
         logger.log(Level.INFO,"\n");
         logger.log(Level.INFO,"Total Invoice = " + total + " NIS");
