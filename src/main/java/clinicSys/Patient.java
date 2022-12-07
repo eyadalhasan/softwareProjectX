@@ -15,7 +15,7 @@ public class Patient extends Users {
         return selectedServices;
     }
 
-    public boolean setSelectedServices(ArrayList<Service> selectedServices) {
+    public boolean setSelectedServices(List<Service> selectedServices) {
     	if (selectedServices.isEmpty())
     		return false;
     	
@@ -27,10 +27,13 @@ public class Patient extends Users {
 
     @Override
     public boolean equals(Object o) {
-        if  (!(o instanceof Patient))
+        if  (!(o instanceof Patient)) {
             return false;
-            Patient other = (Patient) o;
+        }
+        else {
+           Patient other = (Patient) o;
         return (this == other);
+        }
     }
     @Override
   public int hashCode() {
