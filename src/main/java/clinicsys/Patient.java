@@ -1,4 +1,4 @@
-package clinicSys;
+package clinicsys;
 
 import java.util.ArrayList;
 

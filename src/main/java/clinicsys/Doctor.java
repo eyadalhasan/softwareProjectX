@@ -1,4 +1,4 @@
-package clinicSys;
+package clinicsys;
 
 public class Doctor extends Users {
 	private boolean isAvailable;
