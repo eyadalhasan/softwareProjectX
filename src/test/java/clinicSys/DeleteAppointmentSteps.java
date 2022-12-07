@@ -2,6 +2,10 @@ package clinicSys;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import clinicSys.Appointment;
 import clinicSys.Patient;
@@ -26,7 +30,7 @@ public class DeleteAppointmentSteps {
 
 	@Given("he\\/she has at leaset one appointment")
 	public void he_she_has_at_leaset_one_appointment() {
-	    assertEquals(record.getPatients().contains(patient), true);
+	    assertTrue(record.getPatients().contains(patient));
 	}
 
 	@Given("he\\/she want to delete this appointment")
@@ -46,17 +50,21 @@ public class DeleteAppointmentSteps {
 
 	@Then("this appointment will be deleted")
 	public void this_appointment_will_be_deleted() {
-		assertEquals(record.deleteAppointment(new Appointment("05", "01", "2022", "11")), true);
+		assertTrue(record.deleteAppointment(new Appointment("05", "01", "2022", "11")));
 	}
 
 	@Then("success message appear {string}")
 	public void success_message_appear(String string) {
-	    System.out.println(string);
+		Logger logger
+    	=Logger.getLogger(
+    	   Invoice.class.getName());
+		
+		   logger.log(Level.INFO,string);
 	}
 
 	@Then("this appointment will not be deleted")
 	public void this_appointment_will_not_be_deleted() {
-		assertEquals(record.getAppointments().contains(new Appointment("05", "01", "2022", "11")), true);
+		assertTrue(record.getAppointments().contains(new Appointment("05", "01", "2022", "11")));
 	}
 
 }

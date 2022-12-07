@@ -24,7 +24,7 @@ public class AddAppointmentSteps {
 
 	@Given("the patient is logged in")
 	public void the_patient_is_logged_in() {
-	   assertEquals(patient.isSignedIn(), true);
+	   assertTrue(patient.isSignedIn());
 	}
 
 	@Given("he\\/she choose day {string}")

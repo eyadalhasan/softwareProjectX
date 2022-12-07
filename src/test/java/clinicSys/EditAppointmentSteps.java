@@ -2,6 +2,11 @@ package clinicSys;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import clinicSys.Appointment;
 import clinicSys.Patient;
@@ -40,19 +45,23 @@ public class EditAppointmentSteps {
 
 	@Then("this appointment will be booked for this patient")
 	public void this_appointment_will_be_booked_for_this_patient() {
-	    assertEquals(record.editAppointment(oldAppointment, newdAppointment), true);
+	    assertTrue(record.editAppointment(oldAppointment, newdAppointment));
 	}
 
 
 	@When("he\\/she  choose unavailable time")
 	public void he_she_choose_unavailable_time() {
 		newdAppointment = new Appointment("14", "05", "2022", "3");
-		assertEquals(record.editAppointment(oldAppointment, newdAppointment), false);
+		assertFalse(record.editAppointment(oldAppointment, newdAppointment));
 	}
 
 	@Then("error message will appear {string}")
 	public void error_message_will_appear(String string) {
-	    System.out.println(string);
+		Logger logger
+    	=Logger.getLogger(
+    	   Invoice.class.getName());
+		
+		   logger.log(Level.INFO,string);
 	}
 }
 

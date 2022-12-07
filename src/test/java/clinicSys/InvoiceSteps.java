@@ -2,6 +2,7 @@ package clinicSys;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
@@ -36,7 +37,7 @@ public class InvoiceSteps {
 
 	@Then("the secretary will issue the invoice")
 	public void the_secretary_will_issue_the_invoice() {
-	    assertEquals(invoice.printInvoice(), true);
+	    assertTrue(invoice.printInvoice());
 	}
 
 }

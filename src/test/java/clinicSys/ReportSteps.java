@@ -4,6 +4,7 @@ import io.cucumber.java.en.*;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
@@ -64,7 +65,7 @@ public class ReportSteps {
 	
 	@Then("a report of number of visitors will be generated")
 	public void a_report_of_number_of_visitors_will_be_generated() {
-		assertEquals(report.numOfVisitsReport(numOfVisits, month), true);
+		assertTrue(report.numOfVisitsReport(numOfVisits, month));
 	}
 
 
@@ -80,7 +81,7 @@ public class ReportSteps {
 	
 	@Then("a report of available services will be generated")
 	public void a_report_of_available_services_will_be_generated() {
-	    assertEquals(report.availableServicesReport(servicesList), true);
+	    assertTrue(report.availableServicesReport(servicesList));
 	}
 
 }
