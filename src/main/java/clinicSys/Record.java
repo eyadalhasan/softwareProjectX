@@ -1,11 +1,12 @@
 package clinicSys;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Record {
-	private ArrayList<Appointment> appointments = new ArrayList<Appointment>();
-	private ArrayList<Patient> patients = new ArrayList<Patient>();
-	private ArrayList<Integer> type = new ArrayList<Integer>();
+	private ArrayList<Appointment> appointments = new ArrayList<>();
+	private ArrayList<Patient> patients = new ArrayList<>();
+	private ArrayList<Integer> type = new ArrayList<>();
 
 	public boolean addAppointment(Appointment appointment, Patient patient) {
 		if (appointments.contains(appointment))
@@ -56,15 +57,15 @@ public class Record {
 
 	}
 
-	public ArrayList<Appointment> getAppointments() {
+	public List<Appointment> getAppointments() {
 		return appointments;
 	}
 
-	public ArrayList<Patient> getPatients() {
+	public List<Patient> getPatients() {
 		return patients;
 	}
 
-	public ArrayList<Integer> getType() {
+	public List<Integer> getType() {
 		return type;
 	}
 	

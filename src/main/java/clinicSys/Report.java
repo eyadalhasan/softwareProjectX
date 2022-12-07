@@ -1,6 +1,7 @@
 package clinicSys;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,7 +18,7 @@ public class Report {
         return true;
     }
 
-    public boolean availableServicesReport(ArrayList<Service> availableServices) {
+    public boolean availableServicesReport(List<Service> availableServices) {
         if (availableServices.isEmpty())
             return false;
 
