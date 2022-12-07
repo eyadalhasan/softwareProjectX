@@ -67,9 +67,8 @@ public class Record {
 	public ArrayList<Integer> getType() {
 		return type;
 	}
+	
 
-	public static void main(String[] args) {
-		Record record = new Record();
-	}
+
 
 }

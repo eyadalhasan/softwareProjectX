@@ -1,14 +1,19 @@
 package clinicSys;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Report {
 
     public boolean numOfVisitsReport(int numOfVisits, String month) {
         if (numOfVisits == 0)
             return false;
-
-        System.out.println("Number of visits for month " + month + " = " + numOfVisits);
+        Logger logger
+    	=Logger.getLogger(
+    	   Invoice.class.getName());
+        String nummonth="Number of visits for month " + month + " = " + numOfVisits;
+        logger.log(Level.INFO,nummonth);
         return true;
     }
 
