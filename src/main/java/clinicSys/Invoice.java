@@ -6,7 +6,7 @@ import java.util.logging.Logger;
 
 
 public class Invoice {
-    protected ArrayList<Service> services = new ArrayList<Service>();
+    protected ArrayList<Service> services = new ArrayList<>();
     protected Double doctorVisit = 0.0;
     protected Double total = 0.0;
 
