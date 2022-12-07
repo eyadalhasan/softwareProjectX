@@ -49,5 +49,11 @@ public class Users {
         Users other = (Users) o;
         return (this.userName.equals(other.userName) && this.password.equals(other.password) && this.role.equals(other.role));
     }
+	
+    @Override
+  public int hashCode() {
+   return 0;
+    }
+
 
 }

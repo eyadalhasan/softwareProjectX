@@ -31,5 +31,9 @@ public class Patient extends Users {
             Patient other = (Patient) o;
         return (this == other);
     }
-    
+    @Override
+  public int hashCode() {
+   return 0;
+    }
+
 }
