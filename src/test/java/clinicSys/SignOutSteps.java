@@ -2,6 +2,7 @@ package clinicSys;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +30,8 @@ public class SignOutSteps {
 	public void that_the_is_signed_in(String string) {
 		for (int i = 0; i < usersList.size(); i++)
 			if (usersList.get(i).checkRole(string))
-				assertEquals(usersList.get(i).signIn(usersList.get(i).userName, usersList.get(i).password), true);
+
+	assertTrue(usersList.get(i).signIn(usersList.get(i).userName, usersList.get(i).password));
 	}
 
 	@When("the {string} signs out")
@@ -43,7 +45,7 @@ public class SignOutSteps {
 	public void the_is_not_signed_ins(String string) {
 		for (int i = 0; i < usersList.size(); i++)
 			if (usersList.get(i).checkRole(string))
-				assertEquals(usersList.get(i).isSignedIn(), false);
+			assertEquals(false,usersList.get(i).isSignedIn());
 	}
 
 }

@@ -2,6 +2,8 @@ package clinicSys;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
@@ -26,7 +28,7 @@ public class ServicesSteps {
 
 	@Given("the patinet is logged in")
 	public void the_patinet_is_logged_in() {
-		assertEquals(patient.isSignedIn(), true);
+		assertTrue(patient.isSignedIn());
 	}
 
 	@Given("the patinet want to select a service")
@@ -46,14 +48,14 @@ public class ServicesSteps {
 	@When("the service is available")
 	public void the_service_is_available() {
 		available = servicesList.get(index).getQuantity() != 0;
-		assertEquals(available, true);
+		assertTrue(available);
 	}
 
 	@Then("the service price will be added to the invoice")
 	public void the_service_price_will_be_added_to_the_invoice() {
 		if (available) {
 			selectedServices.add(servicesList.get(index));
-			assertEquals(patient.setSelectedServices(selectedServices), true);
+			assertTrue(patient.setSelectedServices(selectedServices));
 		}
 	}
 
@@ -65,7 +67,7 @@ public class ServicesSteps {
 	@When("the service is not available")
 	public void the_service_is_not_available() {
 		available = servicesList.get(index).getQuantity() != 0;
-		assertEquals(available, false);
+		assertFalse(available);
 	}
 
 }

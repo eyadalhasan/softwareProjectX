@@ -28,7 +28,7 @@ public class VisitSteps {
 	
 	@Given("the secretary is logged in")
 	public void the_secretary_is_logged_in() {
-	    assertEquals(secretary.isSignedIn(), true);
+	    assertEquals(true,secretary.isSignedIn());
 	}
 
 	@When("a patient arrived to clinic on his appointment")
@@ -38,7 +38,7 @@ public class VisitSteps {
 
 	@Then("a visit will be recorded")
 	public void a_visit_will_be_recorded() {
-	   assertEquals(record.addVisit(record.getAppointments().get(index)), true);
+	   assertEquals(true,record.addVisit(record.getAppointments().get(index)));
 	}
 
 	@When("a patient arrived to clinic without appointment")

@@ -2,6 +2,8 @@ package clinicSys;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +38,7 @@ public class SignInSteps {
 	public void thatTheIsNotSignedIn(String role) {
 
 		for (int i = 0; i < usersList.size(); i++)
-			assertEquals(usersList.get(0).isSignedIn(), false);
+		assertFalse(usersList.get(0).isSignedIn());
 	}
 
 	@Given("the {string} username is {string}")
@@ -57,7 +59,7 @@ public class SignInSteps {
 
 		for (int i = 0; i < usersList.size(); i++)
 			if (usersList.get(i).checkRole(role))
-				assertEquals(usersList.get(i).signIn(userName, password), true);
+			assertTrue(usersList.get(i).signIn(userName, password));
 
 	}
 
@@ -65,7 +67,7 @@ public class SignInSteps {
 	public void theIsSignedIn(String string) {
 		for (int i = 0; i < usersList.size(); i++)
 			if (usersList.get(i).checkRole(role))
-				assertEquals(usersList.get(i).isSignedIn(), true);
+				assertTrue(usersList.get(i).isSignedIn());
 	}
 
 	@Then("go to {string} page")
@@ -77,13 +79,13 @@ public class SignInSteps {
 	public void theSignInNotSucceeds(String string) {
 		for (int i = 0; i < usersList.size(); i++)
 			if (usersList.get(i).checkRole(role))
-				assertEquals(usersList.get(i).signIn(userName, password), false);
+				assertFalse(usersList.get(i).signIn(userName, password));
 	}
 	@Then("the {string} is not signed in")
 	public void theIsNotSignedIn(String string) {
 		for (int i = 0; i < usersList.size(); i++)
 			if (usersList.get(i).checkRole(role))
-				assertEquals(usersList.get(i).isSignedIn(), false);
+				assertFalse(usersList.get(i).isSignedIn());
 	}
 
 }
