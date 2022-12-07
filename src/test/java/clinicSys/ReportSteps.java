@@ -1,4 +1,4 @@
-package clinicsys;
+package clinicSys;
 
 import io.cucumber.java.en.*;
 
