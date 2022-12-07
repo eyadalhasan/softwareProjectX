@@ -1,4 +1,4 @@
-package clinicSys;
+package clinicsys;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
