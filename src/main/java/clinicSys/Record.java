@@ -42,7 +42,7 @@ public class Record {
 
 	}
 
-	public boolean editAppointment(Appointment oldAppointment, Appointment newAppointment, Patient patient) {
+	public boolean editAppointment(Appointment oldAppointment, Appointment newAppointment) {
 		if (appointments.contains(newAppointment))
 			return false;
 

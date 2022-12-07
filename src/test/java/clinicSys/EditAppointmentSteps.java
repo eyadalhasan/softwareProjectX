@@ -40,13 +40,14 @@ public class EditAppointmentSteps {
 
 	@Then("this appointment will be booked for this patient")
 	public void this_appointment_will_be_booked_for_this_patient() {
-	    assertEquals(record.editAppointment(oldAppointment, newdAppointment, patient), true);
+	    assertEquals(record.editAppointment(oldAppointment, newdAppointment), true);
 	}
+
 
 	@When("he\\/she  choose unavailable time")
 	public void he_she_choose_unavailable_time() {
 		newdAppointment = new Appointment("14", "05", "2022", "3");
-		assertEquals(record.editAppointment(oldAppointment, newdAppointment, patient), false);
+		assertEquals(record.editAppointment(oldAppointment, newdAppointment), false);
 	}
 
 	@Then("error message will appear {string}")
