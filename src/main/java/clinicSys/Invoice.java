@@ -29,12 +29,13 @@ public class Invoice {
         for (Service service : services) {
             logger.log(Level.INFO,service.toString());
         }
-        
+      String  doctor="Doctor visit = " + doctorVisit;
+      String totalV="Total Invoice = " + total + " NIS";
 
-        logger.log(Level.SEVERE,"\n {0}");
-        logger.log(Level.INFO,"Doctor visit = " + doctorVisit);
+        logger.log(Level.SEVERE,"\n");
+        logger.log(Level.INFO,doctor);
         logger.log(Level.INFO,"\n");
-        logger.log(Level.INFO,"Total Invoice = " + total + " NIS");
+        logger.log(Level.INFO,totalV);
        
         
         return true;
