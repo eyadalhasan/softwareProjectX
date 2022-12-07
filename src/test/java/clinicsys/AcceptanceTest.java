@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @CucumberOptions(features = "Features",
 monochrome = true,
 snippets = SnippetType.CAMELCASE,
-glue = { "clinicSys" })
+glue = { "clinicsys" })
 
 public class AcceptanceTest {
 
