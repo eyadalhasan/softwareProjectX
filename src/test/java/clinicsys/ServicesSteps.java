@@ -1,12 +1,12 @@
-package clinicSys;
+package clinicsys;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 
-import clinicSys.Patient;
-import clinicSys.Service;
+import clinicsys.Patient;
+import clinicsys.Service;
 
 public class ServicesSteps {
 
