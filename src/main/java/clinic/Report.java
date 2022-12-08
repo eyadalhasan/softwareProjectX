@@ -1,4 +1,4 @@
-package clinicSys;
+package clinic;
 
 import java.util.List;
 import java.util.logging.Level;

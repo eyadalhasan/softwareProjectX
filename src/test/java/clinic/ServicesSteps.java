@@ -1,4 +1,4 @@
-package clinicSys;
+package clinic;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
@@ -7,8 +7,8 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
-import clinicSys.Patient;
-import clinicSys.Service;
+import clinic.Patient;
+import clinic.Service;
 
 public class ServicesSteps {
 

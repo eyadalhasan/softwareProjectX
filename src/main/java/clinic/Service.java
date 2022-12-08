@@ -1,4 +1,4 @@
-package clinicSys;
+package clinic;
 
 public class Service {
     private String serviceName;

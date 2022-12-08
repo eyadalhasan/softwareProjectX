@@ -1,4 +1,4 @@
-package clinicSys;
+package clinic;
 
 import io.cucumber.java.en.*;
 
@@ -8,12 +8,12 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
-import clinicSys.Appointment;
-import clinicSys.Patient;
-import clinicSys.Record;
-import clinicSys.Report;
-import clinicSys.Secretary;
-import clinicSys.Service;
+import clinic.Appointment;
+import clinic.Patient;
+import clinic.Record;
+import clinic.Report;
+import clinic.Secretary;
+import clinic.Service;
 
 
 public class ReportSteps {

@@ -1,4 +1,4 @@
-package clinicSys;
+package clinic;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
@@ -6,10 +6,10 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
-import clinicSys.Invoice;
-import clinicSys.Patient;
-import clinicSys.Secretary;
-import clinicSys.Service;
+import clinic.Invoice;
+import clinic.Patient;
+import clinic.Secretary;
+import clinic.Service;
 
 public class InvoiceSteps {
 	

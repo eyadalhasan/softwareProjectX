@@ -1,13 +1,13 @@
-package clinicSys;
+package clinic;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
 
-import clinicSys.Appointment;
-import clinicSys.Doctor;
-import clinicSys.Patient;
-import clinicSys.Record;
-import clinicSys.Secretary;
+import clinic.Appointment;
+import clinic.Doctor;
+import clinic.Patient;
+import clinic.Record;
+import clinic.Secretary;
 
 public class VisitSteps {
 	

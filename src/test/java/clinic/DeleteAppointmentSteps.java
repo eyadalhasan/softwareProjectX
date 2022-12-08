@@ -1,4 +1,4 @@
-package clinicSys;
+package clinic;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
@@ -7,9 +7,9 @@ import static org.junit.Assert.assertTrue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import clinicSys.Appointment;
-import clinicSys.Patient;
-import clinicSys.Record;
+import clinic.Appointment;
+import clinic.Patient;
+import clinic.Record;
 
 public class DeleteAppointmentSteps {
 	
