@@ -12,5 +12,7 @@ snippets = SnippetType.CAMELCASE,
 glue = { "clinic" })
 
 public class AcceptanceTest {
+	int x=1;
+	
 
 }
