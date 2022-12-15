@@ -51,33 +51,31 @@
 
 	</dependencies>
 	<build>
-	<pluginManagement>
     <plugins>
         <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>build-helper-maven-plugin</artifactId>
-            <version>3.3.0</version>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.5</version>
             <executions>
                 <execution>
-                    <id>add-resource</id>
-                    <phase>generate-resources</phase>
                     <goals>
-                        <goal>add-resource</goal>
+                        <goal>prepare-agent</goal>
                     </goals>
-                    <configuration>
-                        <resources>
-                            <resource>
-                                <directory>src/resources</directory>
-                                <targetPath>json</targetPath>
-                            </resource>
-                        </resources>
-                    </configuration>
+                </execution>
+                <!-- attached to Maven test phase -->
+                <execution>
+                    <id>report</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
                 </execution>
             </executions>
         </plugin>
-   </plugins>
-</pluginManagement>
+    </plugins>
 </build>
+
+
 	
 	
 </project>
