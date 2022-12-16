@@ -24,6 +24,7 @@ public class ReportSteps {
 	Record record = new Record();
 	int numOfVisits = 0;
 	Report report = new Report();
+	String date;
 	
 	ArrayList<Service> servicesList = new ArrayList<Service>();
 	
@@ -53,8 +54,11 @@ public class ReportSteps {
 	@When("he choose visitors list for a certain month")
 	public void he_choose_visitors_list_for_a_certain_month() {
 		for (int i = 0; i < record.getAppointments().size(); i++) {
-			if (record.getType().get(i) == 2 && record.getAppointments().get(i).getMonth().equals(month))
+			if (record.getType().get(i) == 2 && record.getAppointments().get(i).getMonth().equals(month)) {
+				date = record.getAppointments().get(i).getDay() + "/" + record.getAppointments().get(i).getMonth() + "/" + record.getAppointments().get(i).getYear();	
+				time = record.getAppointments().get(i).getTime();
 				numOfVisits++;
+			}
 		}
 	}
 
