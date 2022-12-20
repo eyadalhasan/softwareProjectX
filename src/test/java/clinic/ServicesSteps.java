@@ -19,7 +19,8 @@ public class ServicesSteps {
 	ArrayList<Service> selectedServices = new ArrayList<Service>();
 
 	public ServicesSteps() {
-		servicesList.add(new Service("Toothbrush", 50, 5.00));
+		Service service1 = new Service("Toothbrush", 50, 5.00);
+		servicesList.add(service1);
 		servicesList.add(new Service("Toothpaste", 0, 10.00));
 		servicesList.add(new Service("Painkiller", 50, 15.00));
 		patient = new Patient("Maen", "maen123", "Patient");
@@ -54,6 +55,7 @@ public class ServicesSteps {
 	@Then("the service price will be added to the invoice")
 	public void the_service_price_will_be_added_to_the_invoice() {
 		if (available) {
+			servicesList.get(index).removeQuantity();
 			selectedServices.add(servicesList.get(index));
 			assertTrue(patient.setSelectedServices(selectedServices));
 		}

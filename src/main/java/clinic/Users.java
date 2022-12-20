@@ -2,9 +2,9 @@ package clinic;
 
 public class Users {
 	
-	protected String userName;
-	protected String password;
-	protected String role;
+	public final String userName;
+	public final String password;
+	public final String role;
 	protected boolean isSignedIn;
 
 	public Users(String userName, String password, String role) {

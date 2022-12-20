@@ -16,6 +16,7 @@ public class SignInSteps {
 	String password;
 	String role;
 	ArrayList<Users> usersList = new ArrayList<Users>();
+	Users user;
 
 
 	@Given("the user on the login page")
@@ -29,7 +30,15 @@ public class SignInSteps {
 		List<List<String>> rows = dataTable.asLists(String.class);
 
 		for (int i = 0; i < rows.size(); i++) {
-			Users addUser = new Users(rows.get(i).get(0), rows.get(i).get(1), rows.get(i).get(2));
+			Users addUser;
+			if (rows.get(i).get(2).equals("Admin"))
+				addUser = new Admin(rows.get(i).get(0), rows.get(i).get(1), rows.get(i).get(2));
+			else if (rows.get(i).get(2).equals("Doctor"))
+				addUser = new Doctor(rows.get(i).get(0), rows.get(i).get(1), rows.get(i).get(2));
+			else if (rows.get(i).get(2).equals("Patient"))
+				addUser = new Patient(rows.get(i).get(0), rows.get(i).get(1), rows.get(i).get(2));
+			else
+				addUser = new Secretary(rows.get(i).get(0), rows.get(i).get(1), rows.get(i).get(2));
 			usersList.add(addUser);
 		}
 	}
@@ -65,9 +74,23 @@ public class SignInSteps {
 
 	@Then("the {string} is signed in")
 	public void theIsSignedIn(String string) {
+				
 		for (int i = 0; i < usersList.size(); i++)
-			if (usersList.get(i).checkRole(role))
+			if (usersList.get(i).checkRole(role)) {
 				assertTrue(usersList.get(i).isSignedIn());
+				if (role.equals("Admin")) {
+					user = new Admin(userName, password, role);
+					assertEquals(true, usersList.get(i).equals(user));
+				}
+				else if (role.equals("Doctor")) {
+					user = new Doctor(userName, password, role);
+					assertEquals(true, usersList.get(i).equals(user));
+				}
+				else if (role.equals("Secretary")) {
+					user = new Secretary(userName, password, role);
+					assertEquals(true, usersList.get(i).equals(user));
+				}
+			}
 	}
 
 	@Then("go to {string} page")
@@ -84,8 +107,21 @@ public class SignInSteps {
 	@Then("the {string} is not signed in")
 	public void theIsNotSignedIn(String string) {
 		for (int i = 0; i < usersList.size(); i++)
-			if (usersList.get(i).checkRole(role))
+			if (usersList.get(i).checkRole(role)) {
 				assertFalse(usersList.get(i).isSignedIn());
+				if (role.equals("Admin")) {
+					user = new Admin(userName, password, role);
+					assertEquals(false, usersList.get(i).equals(user));
+				}
+				else if (role.equals("Doctor")) {
+					user = new Doctor(userName, password, role);
+					assertEquals(false, usersList.get(i).equals(user));
+				}
+				else if (role.equals("Secretary")) {
+					user = new Secretary(userName, password, role);
+					assertEquals(false, usersList.get(i).equals(user));
+				}
+			}
 	}
 
 }
